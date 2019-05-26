@@ -9,6 +9,9 @@ $(function () {
                       "password" : $('#password').val(),
                     };
        var url = $('#form_add_user').attr('action');
+       if (!validarInfoForm(infoForm)){
+           return;
+       }
        addUser(url,infoForm);
        $('#exampleModalCenter').modal('hide');
         $('#name').val('');
@@ -111,4 +114,52 @@ function deleteUser(id) {
         alert('algo salió mal. No se pudo eliminar!');
     });
 
+}
+
+function validarInfoForm(info,operacion='add') {
+    if(!validateName(info.name)){
+        $('.mensaje_nombre').empty().append('se Requiere un nombre de usuario');
+        return false;
+    }$('.mensaje_nombre').empty();
+    if(!isEmail(info.email)){
+        $('.mensaje_correo').empty().append('Correo Inválido');
+        return false;
+    }$('.mensaje_correo').empty();
+
+    if(!validatePass(info.password)){
+        $('.mensaje_password').empty().append('la clave debe contener por lo menos 8 caracteres');
+        return false;
+    }$('.mensaje_password').empty();
+    return true;
+}
+
+function isEmail(email) {
+    var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    return regex.test(email);
+}
+
+function validateName(name) {
+    if(!name.length>0){
+        return false;
+    }
+    return true;
+}
+
+function validatePass(pass) {
+    if(pass.length<8){
+        return false;
+    }
+    return true;
+}
+
+function validateemailexist(email,operacion) {
+    $.get('/list/users').done(function (data) {
+        $.each(data.users,function (i,v) {
+            if(v.email==email){
+                console.log(v.email,email);
+                return false;
+            }
+        });
+        return true;
+    });
 }

@@ -29,11 +29,11 @@
                                     <div class="col-md-6">
                                         <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
 
-                                        @error('name')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
+
+                                        <span role="alert">
+                                            <strong class="mensaje_nombre"></strong>
                                         </span>
-                                        @enderror
+
                                     </div>
                                 </div>
 
@@ -43,11 +43,9 @@
                                     <div class="col-md-6">
                                         <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
 
-                                        @error('email')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
+                                        <span role="alert">
+                                            <strong class="mensaje_correo"></strong>
                                         </span>
-                                        @enderror
                                     </div>
                                 </div>
 
@@ -56,12 +54,10 @@
 
                                     <div class="col-md-6">
                                         <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-
-                                        @error('password')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
+                                        <span role="alert">
+                                            <strong class="mensaje_password"></strong>
                                         </span>
-                                        @enderror
+
                                     </div>
                                 </div>
 
@@ -148,5 +144,7 @@
 
 @endsection
 @section('scripts')
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
     <script src="{{ asset('js/users.js') }}" defer></script>
 @endsection
