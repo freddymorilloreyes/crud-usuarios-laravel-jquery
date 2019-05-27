@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Country;
+use App\Department;
+use App\Municipality;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -17,8 +19,8 @@ class UserController extends Controller
     public function index()
     {
         $countries = Country::all();
-        //$departments = \App\Country::find(47)->departments;
-        //dd($departments);
+        //$users = User::with('municipality.department')->get();
+        //dd($users);
         return view('admin.principal',[
             'countries'=> $countries,
         ]);
@@ -31,7 +33,8 @@ class UserController extends Controller
      */
     public function list()
     {
-        $users = User::all();
+        $users = User::with('municipality.department.country')->get();
+        //$users = User::with('municipality','department')->get();
         return response()->json([
             'users'=>$users,
         ]);

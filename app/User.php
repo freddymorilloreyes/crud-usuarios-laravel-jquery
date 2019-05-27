@@ -44,4 +44,12 @@ class User extends Authenticatable
     {
         return $this->belongsTo('App\Municipality');
     }
+
+    /**
+     * obtener el departamento a través de la municipalidad
+     */
+    public function userDepartment()
+    {
+        return $this->hasOneThrough('App\Department', 'App\Municipality');
+    }
 }

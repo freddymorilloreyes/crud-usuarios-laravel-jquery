@@ -62,7 +62,7 @@ function crearFilasTablaUsers(infoUsers){
         filas +='    <tr>\n' +
         '      <td>'+value.name+'</td>\n' +
         '      <td>'+value.email+'</td>\n' +
-        '      <td>'+value.municipality_id+'</td>\n' +
+        '      <td>'+value.municipality.department.country.name+'-'+value.municipality.department.name+'-'+value.municipality.name+'</td>\n' +
         '      <td>'+value.created_at+'</td>\n' +
         '      <th scope="row">\n' +
             '      <button class="btn btn-warning" onclick="showModalEdit('+value.id+')">editar</button>\n' +
