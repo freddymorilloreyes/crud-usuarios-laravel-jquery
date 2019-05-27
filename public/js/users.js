@@ -134,6 +134,7 @@ function deleteUser(id) {
 }
 
 function validarInfoForm(info) {
+    console.log(info.municipality_id,info.name);
     if(!validateName(info.name)){
         $('.mensaje_nombre').empty().append('se Requiere un nombre de usuario');
         return false;
@@ -146,6 +147,10 @@ function validarInfoForm(info) {
         $('.mensaje_password').empty().append('la clave debe contener por lo menos 8 caracteres');
         return false;
     }$('.mensaje_password').empty();
+    if(!validateMunicipality(info.municipality_id)){
+        $('.mensaje_direccion').empty().append('debes Seleccionar una dirección!');
+        return false;
+    }$('.mensaje_direccion').empty();
     return true;
 }
 
@@ -156,6 +161,13 @@ function isEmail(email) {
 
 function validateName(name) {
     if(!name.length>0){
+        return false;
+    }
+    return true;
+}
+
+function validateMunicipality(municipality) {
+    if(!municipality){
         return false;
     }
     return true;

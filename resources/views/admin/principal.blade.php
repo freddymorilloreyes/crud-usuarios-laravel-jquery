@@ -87,6 +87,9 @@
                                         <select name="municipality_id" id="municipality_id" class="municipality_id">
                                             <option value=""></option>
                                         </select>
+                                    <span role="alert">
+                                        <strong class="mensaje_direccion"></strong>
+                                    </span>
                                     </div>
                                 </div>
                         </div>
@@ -177,6 +180,9 @@
                                     <select name="municipality_id" id="municipality_id_update" class="municipality_id">
                                         <option value=""></option>
                                     </select>
+                                <span role="alert">
+                                        <strong class="mensaje_direccion"></strong>
+                                </span>
                                 </div>
                             </div>
                         </div>

@@ -6,6 +6,7 @@ $(document).ready(function() {
         $(".department_id").empty();
         $.get('/department/'+country_id)
             .done(function(result) {
+                $(".department_id").append('<option value="">seleccione</option>');
                 $.each(result.departments, function (key , value) {
                     $(".department_id").append('<option value="'+value.id+'">'+value.name+'</option>');
                 });
@@ -21,6 +22,7 @@ $(document).ready(function() {
         $(".municipality_id").empty();
         $.get('/municipality/'+department_id)
             .done(function(result) {
+                $(".municipality_id").append('<option value="">seleccione</option>');
                 $.each(result.municipalities, function (key , value) {
                     $(".municipality_id").append('<option value="'+value.id+'">'+value.name+'</option>');
                 });
