@@ -149,9 +149,38 @@
                                     </span>
                                 </div>
                             </div>
+                            <div class="form-group row">
+                                <label for="country_update" class="col-md-4 col-form-label text-md-right">{{ __('Pais') }}</label>
 
+                                <div class="col-md-6">
+                                    <select name="country" id="country_update" class="country_id">
+                                        <option value="">País</option>
+                                        @foreach($countries as $country)
+                                            <option value="{{ $country->id }}">{{ $country->name }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="departments_update" class="col-md-4 col-form-label text-md-right">{{ __('Departamento') }}</label>
 
+                                <div class="col-md-6">
+                                    <select name="department" id="departments_update" class="department_id">
+                                        <option value=""></option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="municipality_id_update" class="col-md-4 col-form-label text-md-right">{{ __('Municipalidad') }}</label>
+
+                                <div class="col-md-6">
+                                    <select name="municipality_id" id="municipality_id_update" class="municipality_id">
+                                        <option value=""></option>
+                                    </select>
+                                </div>
+                            </div>
                         </div>
+
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">cerrar</button>
                             <button type="submit" class="btn btn-primary" id="enviar_form_update">

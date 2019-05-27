@@ -3,8 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="59531426-c88a-44b6-bcef-927a15acb546" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/address.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/address.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/users.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/principal.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/principal.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -45,11 +46,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/js/users.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="64" column="107" selection-start-line="64" selection-start-column="107" selection-end-line="64" selection-end-column="107" />
+            <state relative-caret-position="299">
+              <caret line="25" column="53" lean-forward="true" selection-start-line="25" selection-start-column="53" selection-end-line="25" selection-end-column="53" />
               <folding>
                 <element signature="n#!!block;n#updateUser#0" />
                 <element signature="n#!!block;n#showModalEdit#0" />
@@ -64,19 +65,28 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/admin/principal.blade.php">
+        <entry file="file://$PROJECT_DIR$/public/js/address.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="86" column="90" selection-start-line="86" selection-start-column="75" selection-end-line="86" selection-end-column="90" />
+            <state relative-caret-position="207">
+              <caret line="18" column="41" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/admin/principal.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="233">
+              <caret line="176" column="93" selection-start-line="176" selection-start-column="71" selection-end-line="176" selection-end-column="93" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/UserController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="46">
-              <caret line="35" column="60" selection-start-line="35" selection-start-column="60" selection-end-line="35" selection-end-column="60" />
+            <state relative-caret-position="253">
+              <caret line="101" column="49" lean-forward="true" selection-start-line="101" selection-start-column="49" selection-end-line="101" selection-end-column="49" />
               <folding>
                 <element signature="e#46#62#0#PHP" expanded="true" />
               </folding>
@@ -135,6 +145,7 @@
       <find>console.log(</find>
       <find>mensaje</find>
       <find>'47'</find>
+      <find>municipality_id</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -156,15 +167,15 @@
         <option value="$PROJECT_DIR$/database/seeds/DepartmentTableSeeder.php" />
         <option value="$PROJECT_DIR$/database/seeds/MunicipalityTableSeeder.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
-        <option value="$PROJECT_DIR$/public/js/address.js" />
         <option value="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_05_27_005234_create_municipalities_table.php" />
         <option value="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" />
         <option value="$PROJECT_DIR$/app/Municipality.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/principal.blade.php" />
         <option value="$PROJECT_DIR$/app/User.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/UserController.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/principal.blade.php" />
+        <option value="$PROJECT_DIR$/public/js/address.js" />
         <option value="$PROJECT_DIR$/public/js/users.js" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/UserController.php" />
       </list>
     </option>
   </component>
@@ -277,19 +288,13 @@
             <path>
               <item name="pruebaTecnicaFreddyMorillo" type="b2602c69:ProjectViewProjectNode" />
               <item name="pruebaTecnicaFreddyMorillo" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="pruebaTecnicaFreddyMorillo" type="b2602c69:ProjectViewProjectNode" />
               <item name="pruebaTecnicaFreddyMorillo" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-              <item name="migrations" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pruebaTecnicaFreddyMorillo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pruebaTecnicaFreddyMorillo" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-              <item name="seeds" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -345,12 +350,12 @@
       <workItem from="1558742338703" duration="2010000" />
       <workItem from="1558803834995" duration="597000" />
       <workItem from="1558889058614" duration="18451000" />
-      <workItem from="1558908628007" duration="18162000" />
+      <workItem from="1558908628007" duration="19063000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39220000" />
+    <option name="totallyTimeSpent" value="40121000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -583,13 +588,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/address.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="4" column="14" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="294">
@@ -615,13 +613,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="253">
           <caret line="13" column="24" lean-forward="true" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/principal.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="86" column="90" selection-start-line="86" selection-start-column="75" selection-end-line="86" selection-end-column="90" />
         </state>
       </provider>
     </entry>
@@ -657,20 +648,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/UserController.php">
+    <entry file="file://$PROJECT_DIR$/public/js/address.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="35" column="60" selection-start-line="35" selection-start-column="60" selection-end-line="35" selection-end-column="60" />
-          <folding>
-            <element signature="e#46#62#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="207">
+          <caret line="18" column="41" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/principal.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="233">
+          <caret line="176" column="93" selection-start-line="176" selection-start-column="71" selection-end-line="176" selection-end-column="93" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/users.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="64" column="107" selection-start-line="64" selection-start-column="107" selection-end-line="64" selection-end-column="107" />
+        <state relative-caret-position="299">
+          <caret line="25" column="53" lean-forward="true" selection-start-line="25" selection-start-column="53" selection-end-line="25" selection-end-column="53" />
           <folding>
             <element signature="n#!!block;n#updateUser#0" />
             <element signature="n#!!block;n#showModalEdit#0" />
@@ -679,6 +674,16 @@
             <element signature="n#!!block;n#isEmail#0" />
             <element signature="n#!!block;n#validateName#0" />
             <element signature="n#!!block;n#validatePass#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/UserController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="101" column="49" lean-forward="true" selection-start-line="101" selection-start-column="49" selection-end-line="101" selection-end-column="49" />
+          <folding>
+            <element signature="e#46#62#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>

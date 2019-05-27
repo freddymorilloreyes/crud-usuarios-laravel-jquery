@@ -100,6 +100,7 @@ class UserController extends Controller
             }
             $user->name=$request->post('name');
             $user->email=$request->post('email');
+            $user->municipality_id=$request->post('municipality_id');
             $user->password=bcrypt($request->post('password'));
             $user->save();
             return response()->json([

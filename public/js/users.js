@@ -22,6 +22,7 @@ $(function () {
             "_token" : $('meta[name="csrf-token"]').attr('content'),
             "name" : $('#name_update').val(),
             "email" : $('#email_update').val(),
+            "municipality_id" : $('#municipality_id_update').val(),
             "password" : $('#password_update').val(),
         };
         var url = $('#form_update_user').attr('action');
