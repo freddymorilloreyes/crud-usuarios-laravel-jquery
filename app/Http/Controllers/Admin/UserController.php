@@ -15,6 +15,7 @@ class UserController extends Controller
      */
     public function index()
     {
+       //dd($this->validateEmailExistent('jane_admin@algo.c4345',1));
         return view('admin.principal');
     }
 
@@ -40,6 +41,11 @@ class UserController extends Controller
     public function store(Request $request)
     {
         if ($request->ajax()){
+            if (!$this->validateEmailExistent($request->post('email'))){
+                return response()->json([
+                    'email_tomado'=>'email ya fue tomado',
+                ]);
+            }
             $user = new User();
             $user->name=$request->post('name');
             $user->email=$request->post('email');
@@ -77,13 +83,19 @@ class UserController extends Controller
     {
         if ($request->ajax()){
             $user = User::find($id);
+            if(!$this->validateEmailExistent($request->post('email'),$id)){
+                return response()->json([
+                    'email_tomado'=>'email ya fue tomado',
+                ]);
+            }
             $user->name=$request->post('name');
             $user->email=$request->post('email');
             $user->password=bcrypt($request->post('password'));
             $user->save();
-
             return response()->json([
                 'mensaje'=>$id,
+                'email'=>$user->email,
+                'id'=>$user->id
             ]);
         }
     }
@@ -101,5 +113,21 @@ class UserController extends Controller
         return response()->json([
             'mensaje'=>'usuario Eliminado Con éxito!',
         ]);
+    }
+
+    private function validateEmailExistent($email,$id=null){
+        if($id){
+            $user = User::find($id);
+            $userEmail=$user->email;
+            $infoEmails = User::where('email', '<>', $userEmail)->get();
+        }else{
+            $infoEmails = User::all('email');
+        }
+        foreach ($infoEmails as $info){
+            if ($email == $info['email']){
+                return false;
+            }
+        }
+        return true;
     }
 }

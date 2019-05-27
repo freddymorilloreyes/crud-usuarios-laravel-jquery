@@ -29,7 +29,6 @@
                                     <div class="col-md-6">
                                         <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
 
-
                                         <span role="alert">
                                             <strong class="mensaje_nombre"></strong>
                                         </span>
@@ -92,11 +91,10 @@
                                 <div class="col-md-6">
                                     <input id="name_update" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
 
-                                    @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
+                                    <span role="alert">
+                                            <strong class="mensaje_nombre"></strong>
+                                    </span>
+
                                 </div>
                             </div>
 
@@ -106,11 +104,9 @@
                                 <div class="col-md-6">
                                     <input id="email_update" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
 
-                                    @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
+                                    <span role="alert">
+                                            <strong class="mensaje_correo"></strong>
+                                    </span>
                                 </div>
                             </div>
 
@@ -119,12 +115,9 @@
 
                                 <div class="col-md-6">
                                     <input id="password_update" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-
-                                    @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
+                                    <span role="alert">
+                                            <strong class="mensaje_password"></strong>
+                                    </span>
                                 </div>
                             </div>
 

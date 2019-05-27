@@ -9,14 +9,10 @@ $(function () {
                       "password" : $('#password').val(),
                     };
        var url = $('#form_add_user').attr('action');
-       if (!validarInfoForm(infoForm)){
+       if(!validarInfoForm(infoForm)){
            return;
        }
        addUser(url,infoForm);
-       $('#exampleModalCenter').modal('hide');
-        $('#name').val('');
-        $('#email').val('');
-         $('#password').val('');
    });
 
     $('#enviar_form_update').click(function (event) {
@@ -28,8 +24,11 @@ $(function () {
             "password" : $('#password_update').val(),
         };
         var url = $('#form_update_user').attr('action');
+        if(!validarInfoForm(infoForm)){
+            return;
+        }
         updateUser(url,infoForm);
-        $('#editModal').modal('hide');
+
     });
 
 });
@@ -73,8 +72,15 @@ function crearFilasTablaUsers(infoUsers){
 function addUser(url,infoForm) {
     $.post(url,infoForm)
         .done(function(data){
-            listar();
-            console.log(data);
+            if(data.email_tomado){
+                $('.mensaje_correo').empty().append('Este Correo ya fue tomado');
+            }else{
+                listar();
+                $('#exampleModalCenter').modal('hide');
+                $('#name').val('');
+                $('#email').val('');
+                $('#password').val('');
+            }
         })
         .fail(function (data) {
             console.log(data);
@@ -84,7 +90,13 @@ function addUser(url,infoForm) {
 function updateUser(url,infoForm) {
     $.post(url,infoForm)
         .done(function(data){
-            listar();
+            console.log(data);
+            if(data.email_tomado){
+                $('.mensaje_correo').empty().append('Este Correo ya fue tomado');
+            }else{
+                listar();
+                $('#editModal').modal('hide');
+            }
         })
         .fail(function (data) {
             console.log(data);
@@ -98,7 +110,6 @@ function showModalEdit(id){
             $('#email_update').val(data.infoUser.email);
             $('#form_update_user').attr('action','/update/'+id+'/users');
             $('#editModal').modal('show');
-            console.log(data)
         })
 }
 
@@ -116,7 +127,7 @@ function deleteUser(id) {
 
 }
 
-function validarInfoForm(info,operacion='add') {
+function validarInfoForm(info) {
     if(!validateName(info.name)){
         $('.mensaje_nombre').empty().append('se Requiere un nombre de usuario');
         return false;
@@ -124,8 +135,7 @@ function validarInfoForm(info,operacion='add') {
     if(!isEmail(info.email)){
         $('.mensaje_correo').empty().append('Correo Inválido');
         return false;
-    }$('.mensaje_correo').empty();
-
+    }
     if(!validatePass(info.password)){
         $('.mensaje_password').empty().append('la clave debe contener por lo menos 8 caracteres');
         return false;
@@ -150,16 +160,4 @@ function validatePass(pass) {
         return false;
     }
     return true;
-}
-
-function validateemailexist(email,operacion) {
-    $.get('/list/users').done(function (data) {
-        $.each(data.users,function (i,v) {
-            if(v.email==email){
-                console.log(v.email,email);
-                return false;
-            }
-        });
-        return true;
-    });
 }
