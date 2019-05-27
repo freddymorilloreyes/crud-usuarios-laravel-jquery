@@ -59,7 +59,36 @@
 
                                     </div>
                                 </div>
+                                <div class="form-group row">
+                                    <label for="country" class="col-md-4 col-form-label text-md-right">{{ __('Pais') }}</label>
 
+                                    <div class="col-md-6">
+                                        <select name="country" id="country" class="country_id">
+                                            <option value="">País</option>
+                                            @foreach($countries as $country)
+                                                <option value="{{ $country->id }}">{{ $country->name }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+                            <div class="form-group row">
+                                    <label for="department" class="col-md-4 col-form-label text-md-right">{{ __('Departamento') }}</label>
+
+                                    <div class="col-md-6">
+                                        <select name="department" id="departments" class="department_id">
+                                            <option value=""></option>
+                                        </select>
+                                    </div>
+                                </div>
+                            <div class="form-group row">
+                                    <label for="municipality" class="col-md-4 col-form-label text-md-right">{{ __('Municipalidad') }}</label>
+
+                                    <div class="col-md-6">
+                                        <select name="municipality" id="municipality" class="municipality_id">
+                                            <option value=""></option>
+                                        </select>
+                                    </div>
+                                </div>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">cerrar</button>
@@ -140,4 +169,5 @@
     <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
     <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
     <script src="{{ asset('js/users.js') }}" defer></script>
+    <script src="{{ asset('js/address.js') }}" defer></script>
 @endsection

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Country;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -15,8 +16,12 @@ class UserController extends Controller
      */
     public function index()
     {
-       //dd($this->validateEmailExistent('jane_admin@algo.c4345',1));
-        return view('admin.principal');
+        $countries = Country::all();
+        //$departments = \App\Country::find(47)->departments;
+        //dd($departments);
+        return view('admin.principal',[
+            'countries'=> $countries,
+        ]);
     }
 
     /**

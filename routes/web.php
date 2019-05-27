@@ -24,3 +24,17 @@ Route::get('/delete/{id}/users', 'Admin\UserController@destroy')->name('delete.u
 Route::post('/add/users', 'Admin\UserController@store')->name('add.user');
 Route::post('/update/{id}/users', 'Admin\UserController@update')->name('update.user');
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::get('/department/{country_id}', function ($country_id){
+    $departments = \App\Country::find($country_id)->departments;
+    return response()->json([
+            'departments'=>$departments
+        ]);
+});
+Route::get('/municipality/{department_id}', function ($department_id){
+    $municipalities = \App\Department::find($department_id)->municipalities;
+    return response()->json([
+            'municipalities'=>$municipalities
+        ]);
+});
