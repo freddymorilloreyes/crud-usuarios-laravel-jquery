@@ -3,6 +3,7 @@
 @section('content')
     <div class="container">
         <!-- Button trigger modal -->
+        <h1>CRUD Usuarios</h1>
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
             agregar usuario
         </button>

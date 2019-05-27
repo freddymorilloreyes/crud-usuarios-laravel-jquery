@@ -8,6 +8,7 @@ use App\Municipality;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Crypt;
 
 class UserController extends Controller
 {
@@ -19,8 +20,7 @@ class UserController extends Controller
     public function index()
     {
         $countries = Country::all();
-        //$users = User::with('municipality.department')->get();
-        //dd($users);
+        //dd($this->show(1));
         return view('admin.principal',[
             'countries'=> $countries,
         ]);

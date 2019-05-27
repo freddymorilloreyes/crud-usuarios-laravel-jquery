@@ -12,6 +12,7 @@
 */
 
 Route::get('/', 'Admin\UserController@index');
+Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
 
@@ -21,7 +22,6 @@ Route::get('/show/{id}/users', 'Admin\UserController@show')->name('show.users');
 Route::get('/delete/{id}/users', 'Admin\UserController@destroy')->name('delete.users');
 Route::post('/add/users', 'Admin\UserController@store')->name('add.user');
 Route::post('/update/{id}/users', 'Admin\UserController@update')->name('update.user');
-Route::get('/home', 'HomeController@index')->name('home');
 
 
 Route::get('/department/{country_id}', function ($country_id){
