@@ -81,10 +81,10 @@
                                     </div>
                                 </div>
                             <div class="form-group row">
-                                    <label for="municipality" class="col-md-4 col-form-label text-md-right">{{ __('Municipalidad') }}</label>
+                                    <label for="municipality_id" class="col-md-4 col-form-label text-md-right">{{ __('Municipalidad') }}</label>
 
                                     <div class="col-md-6">
-                                        <select name="municipality" id="municipality" class="municipality_id">
+                                        <select name="municipality_id" id="municipality_id" class="municipality_id">
                                             <option value=""></option>
                                         </select>
                                     </div>

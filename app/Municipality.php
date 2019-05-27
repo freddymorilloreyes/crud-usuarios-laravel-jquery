@@ -13,4 +13,12 @@ class Municipality extends Model
     {
         return $this->belongsTo('App\Department');
     }
+
+    /**
+     * obtiene los usuarios en esta municipalidad
+     */
+    public function users()
+    {
+        return $this->hasMany('App\User');
+    }
 }

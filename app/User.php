@@ -36,4 +36,12 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * obtiene la municipalidad para este usuario
+     */
+    public function municipality()
+    {
+        return $this->belongsTo('App\Municipality');
+    }
 }

@@ -6,6 +6,7 @@ $(function () {
                       "_token" : $('meta[name="csrf-token"]').attr('content'),
                       "name" : $('#name').val(),
                       "email" : $('#email').val(),
+                      "municipality_id" : $('#municipality_id').val(),
                       "password" : $('#password').val(),
                     };
        var url = $('#form_add_user').attr('action');
@@ -36,12 +37,14 @@ $(function () {
 function listar() {
     $.get('/list/users')
         .done(function (data) {
+            console.log(data);
             $('#tabla_usuarios').empty();
             $('#tabla_usuarios').append('<table class="table table-striped">\n' +
                 '  <thead>\n' +
                 '    <tr>\n' +
                 '      <th scope="col">Nombre</th>\n' +
                 '      <th scope="col">Email</th>\n' +
+                '      <th scope="col">Dirección</th>\n' +
                 '      <th scope="col">Creado</th>\n' +
                 '      <th scope="col">Acciones</th>\n' +
                 '    </tr>\n' +
@@ -59,6 +62,7 @@ function crearFilasTablaUsers(infoUsers){
         filas +='    <tr>\n' +
         '      <td>'+value.name+'</td>\n' +
         '      <td>'+value.email+'</td>\n' +
+        '      <td>'+value.municipality_id+'</td>\n' +
         '      <td>'+value.created_at+'</td>\n' +
         '      <th scope="row">\n' +
             '      <button class="btn btn-warning" onclick="showModalEdit('+value.id+')">editar</button>\n' +
@@ -72,6 +76,7 @@ function crearFilasTablaUsers(infoUsers){
 function addUser(url,infoForm) {
     $.post(url,infoForm)
         .done(function(data){
+            console.log(data);
             if(data.email_tomado){
                 $('.mensaje_correo').empty().append('Este Correo ya fue tomado');
             }else{
